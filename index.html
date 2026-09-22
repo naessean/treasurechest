@@ -18,35 +18,114 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>
-        What's In The Treasure Chest | Collectibles, Cards, Vintage Finds & More
-    </title>
-
-    <meta name="description"
-          content="What's In The Treasure Chest offers thousands of unique finds including collectibles, sports cards, Pokemon cards, vintage items, memorabilia, clothing, toys and more. Shop our eBay store and visit our Magic Chest trading card vending machine.">
-
-    <meta name="keywords"
-          content="What's In The Treasure Chest, collectibles, Pokemon cards, sports cards, trading cards, Magic Chest, TCG vending machine, vintage collectibles, memorabilia, eBay store">
-
-    <meta name="robots"
-          content="index, follow">
-
-
     <!-- =====================================================
-         OPEN GRAPH
+         PRIMARY SEO
     ====================================================== -->
 
-    <meta property="og:title"
+    <title>Collectibles, Sports Cards & Vintage Finds | What's In The Treasure Chest</title>
+
+    <meta name="description"
+          content="Shop What's In The Treasure Chest for sports cards, Pokémon cards, vintage finds, memorabilia, toys and unique collectibles. Browse thousands of items on eBay and find our Magic Chest TCG vending machine.">
+
+    <meta name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <link rel="canonical"
+          href="https://www.whatsinthetreasurechest.com/">
+
+    <!-- =====================================================
+         OPEN GRAPH / SOCIAL SHARING
+    ====================================================== -->
+
+    <meta property="og:site_name"
           content="What's In The Treasure Chest">
 
+    <meta property="og:title"
+          content="Collectibles, Sports Cards & Vintage Finds | What's In The Treasure Chest">
+
     <meta property="og:description"
-          content="You never know what you might find. Shop thousands of collectibles, cards, vintage finds and more.">
+          content="You never know what you might find. Discover sports cards, Pokémon cards, vintage finds, memorabilia, toys and thousands of unique collectibles.">
 
     <meta property="og:type"
           content="website">
 
     <meta property="og:url"
           content="https://www.whatsinthetreasurechest.com/">
+
+    <meta property="og:image"
+          content="https://www.whatsinthetreasurechest.com/assets/img/treasure-chest-logo.png">
+
+    <meta property="og:image:alt"
+          content="What's In The Treasure Chest logo">
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Collectibles, Sports Cards & Vintage Finds | What's In The Treasure Chest">
+
+    <meta name="twitter:description"
+          content="Discover sports cards, Pokémon cards, vintage finds, memorabilia, toys and thousands of unique collectibles.">
+
+    <meta name="twitter:image"
+          content="https://www.whatsinthetreasurechest.com/assets/img/treasure-chest-logo.png">
+
+    <!-- =====================================================
+         STRUCTURED DATA / SCHEMA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.whatsinthetreasurechest.com/#organization",
+          "name": "What's In The Treasure Chest",
+          "url": "https://www.whatsinthetreasurechest.com/",
+          "logo": "https://www.whatsinthetreasurechest.com/assets/img/treasure-chest-logo.png",
+          "description": "A treasure-hunting collectibles business offering sports cards, Pokémon cards, vintage finds, memorabilia, toys and other unique items through its eBay store and a Magic Chest TCG vending machine.",
+          "sameAs": [
+            "https://www.ebay.com/str/bellabuffal16",
+            "https://www.tiktok.com/@wittc9"
+          ],
+          "knowsAbout": [
+            "Sports cards",
+            "Pokémon cards",
+            "Trading cards",
+            "Vintage collectibles",
+            "Memorabilia",
+            "Toys",
+            "Collectibles"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.whatsinthetreasurechest.com/#website",
+          "url": "https://www.whatsinthetreasurechest.com/",
+          "name": "What's In The Treasure Chest",
+          "publisher": {
+            "@id": "https://www.whatsinthetreasurechest.com/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.whatsinthetreasurechest.com/#webpage",
+          "url": "https://www.whatsinthetreasurechest.com/",
+          "name": "Collectibles, Sports Cards & Vintage Finds | What's In The Treasure Chest",
+          "description": "Shop What's In The Treasure Chest for sports cards, Pokémon cards, vintage finds, memorabilia, toys and unique collectibles.",
+          "isPartOf": {
+            "@id": "https://www.whatsinthetreasurechest.com/#website"
+          },
+          "about": {
+            "@id": "https://www.whatsinthetreasurechest.com/#organization"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
 
 
     <!-- =====================================================
@@ -1434,6 +1513,45 @@
 
 
         });
+
+
+    // =====================================================
+    // GA4 OUTBOUND CLICK TRACKING
+    // Tracks the actions that matter most without changing the design.
+    // =====================================================
+
+    document.addEventListener("click", function(event) {
+
+        const link = event.target.closest("a");
+
+        if (!link || !link.href || typeof gtag !== "function") {
+            return;
+        }
+
+        const href = link.href;
+        let eventName = "";
+        let destination = "";
+
+        if (href.includes("ebay.com/str/bellabuffal16")) {
+            eventName = "ebay_store_click";
+            destination = "eBay Store";
+        } else if (href.includes("google.com/maps")) {
+            eventName = "tcg_directions_click";
+            destination = "Magic Chest TCG Machine";
+        } else if (href.includes("tiktok.com/@wittc9")) {
+            eventName = "tiktok_click";
+            destination = "TikTok";
+        }
+
+        if (eventName) {
+            gtag("event", eventName, {
+                link_url: href,
+                link_text: link.innerText.trim() || link.getAttribute("aria-label") || destination,
+                destination: destination
+            });
+        }
+
+    });
 
 
 </script>
