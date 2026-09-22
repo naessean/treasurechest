@@ -2463,3 +2463,31 @@ button {
         font-size: 52px !important;
     }
 }
+/* =====================================================
+   TCG MACHINE IMAGE - MOBILE FIX
+===================================================== */
+
+.local-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 850px) {
+
+    .local-photo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .local-photo img {
+        width: 100%;
+        max-width: 500px;
+        height: auto !important;
+        object-fit: contain;
+        border-radius: 20px;
+    }
+
+}
