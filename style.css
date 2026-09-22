@@ -2464,29 +2464,40 @@ button {
     }
 }
 /* =====================================================
-   TCG MACHINE IMAGE - MOBILE FIX
+   TCG MACHINE IMAGE - MOBILE
 ===================================================== */
+
+.local-photo {
+    width: 100%;
+}
 
 .local-photo img {
     width: 100%;
     height: auto;
-    object-fit: contain;
     display: block;
+    border-radius: 24px;
 }
 
+/* PHONE / TABLET */
 @media (max-width: 850px) {
 
     .local-photo {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        height: 430px;
+        overflow: hidden;
+        border-radius: 20px;
     }
 
     .local-photo img {
         width: 100%;
-        max-width: 500px;
-        height: auto !important;
-        object-fit: contain;
+        height: 100% !important;
+
+        /* Crop instead of stretching */
+        object-fit: cover;
+
+        /* Keep the machine centered in the crop */
+        object-position: center center;
+
         border-radius: 20px;
     }
 
