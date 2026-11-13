@@ -47,6 +47,13 @@
 .local-badge{display:inline-flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.06em}
 .local-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
 .location-panel,.faq-section,.seo-copy{padding:80px 0}
+.winner-section{padding:80px 0}
+.winner-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.winner-photo img{display:block;width:100%;height:auto;border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.25)}
+.winner-copy h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin:16px 0}
+.winner-copy p{font-size:1.08rem;line-height:1.8}
+.winner-caption{font-size:.9rem;opacity:.8;margin-top:12px}
+
 .location-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .location-details,.faq-item{padding:28px;border-radius:20px}
 .location-details h2,.seo-copy h2,.faq-section h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.2rem);margin-top:0}
@@ -60,7 +67,7 @@
 .breadcrumbs{font-size:.92rem;margin-bottom:24px}
 .breadcrumbs a{text-decoration:none}
 @media(max-width:850px){
-  .local-hero-grid,.location-card{grid-template-columns:1fr}
+  .local-hero-grid,.location-card,.winner-grid{grid-template-columns:1fr}
   .tcg-grid{grid-template-columns:1fr}
   .local-hero{padding-top:120px}
 }
@@ -166,6 +173,25 @@
       <div class="tcg-box"><i class="fa-solid fa-bolt"></i><h3>Pokémon</h3><p>Pokémon card finds for collectors and fans, with inventory changing as the machine is refreshed.</p></div>
       <div class="tcg-box"><i class="fa-solid fa-skull-crossbones"></i><h3>One Piece</h3><p>Look for One Piece trading-card finds alongside the other TCG selections in the Magic Chest.</p></div>
       <div class="tcg-box"><i class="fa-solid fa-dragon"></i><h3>Yu-Gi-Oh! & More</h3><p>Yu-Gi-Oh! and other collectible card surprises may be available as the selection rotates.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Real grand prize winner photo -->
+<section class="winner-section" id="winner" aria-labelledby="winner-title">
+  <div class="container winner-grid">
+    <div class="winner-photo">
+      <img src="assets/img/winner.png" alt="Grand prize winner from the Magic Chest Pokémon trading card vending machine in Acworth, Georgia" loading="lazy" decoding="async">
+      <p class="winner-caption">A grand prize moment at the Magic Chest!</p>
+    </div>
+    <div class="winner-copy">
+      <span class="section-kicker"><i class="fa-solid fa-trophy" aria-hidden="true"></i> GRAND PRIZE WINNER</span>
+      <h2 id="winner-title">We Have a Grand Prize Winner!</h2>
+      <p>Congratulations to this lucky visitor who won the <strong>grand prize</strong> from our Magic Chest Pokémon trading card vending machine!</p>
+      <p>It's moments like these that make the treasure hunt so much fun. Stop by Portal Pinball Arcade in Acworth and see what surprises the Magic Chest has in store.</p>
+      <div class="local-actions">
+        <a class="btn btn-gold" href="#location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Find the Machine</a>
+      </div>
     </div>
   </div>
 </section>
